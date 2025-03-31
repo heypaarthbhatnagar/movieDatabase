@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explore Movie</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <h1>🎥 Movie Database</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="auth-link"><a href="login.html">Login/SignUp</a></li>
+                    <li id="signout-btn-container" style="display: none;">
+                        <button id="signout-btn" class="signout-btn">Sign Out</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Movie Details Section -->
+    <section id="movie-details" class="container">
+        <p>Loading movie details...</p>
+    </section>
+
+    <div class="btn-container">
+        <button onclick="window.history.back()" class="btn">⬅️ Back</button>
+    </div>
+
+    <footer>
+        <p>© 2025 Vit Chennai. All rights reserved.</p>
+    </footer>
+
+    <script src="explore.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

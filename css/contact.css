@@ -1,0 +1,193 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #333;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ff4081;
+    margin-bottom: 0.5rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #ff4081;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff79b0;
+    text-decoration: underline;
+}
+
+/* Contact Form Styles */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    min-height: 80vh;
+}
+
+.form-container {
+    background-color: #1f1f1f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ff4081;
+}
+
+/* Fieldset & Legend */
+fieldset {
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    color: #ff4081;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+/* Form Input Styles */
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e0e0e0;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    resize: none;
+}
+
+/* Input Focus Effects */
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 1px solid #ff4081;
+    box-shadow: 0 0 8px rgba(255, 64, 129, 0.8);
+}
+
+/* Button Styles */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn {
+    background-color: #ff4081;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #ff79b0;
+    transform: scale(1.05);
+}
+
+.reset-btn {
+    background-color: #555;
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #777;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    border-top: 2px solid #333;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}

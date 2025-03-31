@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results - Movie Database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="navbar-container">
+            <h1>🎥 Movie Database</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="auth-link"><a href="login.html">Login/SignUp</a></li>
+                    <li id="signout-btn-container" style="display: none;">
+                        <button id="signout-btn" class="signout-btn">Sign Out</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Search Results for "<span id="query-text"></span>"</h2>
+        <div id="search-results" class="movie-list"></div>
+    </div>
+
+    <footer>
+        <p>© 2025 Vit Chennai. All rights reserved.</p>
+    </footer>
+
+    <script src="search.js"></script>
+</body>
+</html>

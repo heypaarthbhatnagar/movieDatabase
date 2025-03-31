@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Movie Database</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <h1>🎥 Movie Database</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login/SignUp</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="contact-container">
+        <h2>📧 Get in Touch</h2>
+        <form id="contactForm" class="form-container">
+            <fieldset>
+                <legend>Contact Information</legend>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+            </fieldset>
+
+            <div class="btn-container">
+                <button type="button" class="btn reset-btn" onclick="resetForm()">Reset</button>
+                <button type="submit" class="btn submit-btn">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Vit Chennai. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Reset the contact form and focus on the name field
+        function resetForm() {
+            document.getElementById('contactForm').reset();
+            document.getElementById('name').focus();
+        }
+
+        // Form submission logic
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent successfully. 🎉');
+            resetForm();
+        });
+    </script>
+</body>
+</html>

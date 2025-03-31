@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff4081;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+.hero {
+    background-color: #333;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Button styles */
+.hero .btn,
+.btn {
+    background-color: #ff4081;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+    outline: none;
+}
+
+.hero .btn:hover,
+.btn:hover {
+    background-color: #d7005f;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff4081;
+}
+
+.movie-list, .actor-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.movie, .actor {
+    background-color: #1e1e1e;
+    width: 250px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.movie img, .actor img {
+    width: 100%;
+    height: 350px;
+}
+
+.movie h2, .actor h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ff4081;
+}
+
+.movie p, .actor p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.contact-form {
+    background-color: #333;
+    padding: 30px;
+    text-align: center;
+}
+
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.rating {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Star Rating System */
+.star-rating {
+    display: flex;
+    gap: 8px;
+    font-size: 1.8rem;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+
+.star {
+    color: #ccc;
+    transition: color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.star.active {
+    color: #ffcc00;
+    transform: scale(1.2);
+}
+
+.star:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+.feedback-message {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* Explore Form */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+
+.movie-details {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-details img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.movie-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ff4081;
+}
+
+.movie-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Additional button styles */
+.filter-btn {
+    background-color: #333;
+    padding: 8px 16px;
+    color: #fff;
+    border: 1px solid #ff4081;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.filter-btn:hover {
+    background-color: #ff4081;
+}
+
+.reset-btn,
+.back-btn {
+    background-color: #555;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.reset-btn:hover,
+.back-btn:hover {
+    background-color: #777;
+}
+
+
+/* movies html */
+.movie-container {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    flex-direction: column; /* Ensures content stacks vertically */
+    padding: 40px 5%;
+    gap: 20px; /* Adjusted for better spacing */
+    max-width: 1200px; /* Adjusted for better centering */
+    margin: 40px auto; /* Centers the container itself */
+    text-align: center; /* Ensures text is centered */
+}
+
+/* --- Movie Details with Two-Column Layout --- */
+.movie-details {
+    display: flex;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* --- Movie Poster Section --- */
+.movie-poster {
+    flex: 0 0 40%;
+    max-width: 500px;
+    min-width: 350px;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+/* --- Movie Info Section --- */
+.movie-info {
+    flex: 1;
+    padding: 40px;
+    background-color: #000;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: #fff;
+}
+
+/* --- Movie Title and Text --- */
+.movie-info h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ff4081;
+}
+
+.movie-info p {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* --- Trailer Section --- */
+.trailer-section {
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.trailer-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff4081;
+}
+
+.trailer-container {
+    width: 100%;
+}
+
+.trailer-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Full-page background poster */
+.background-poster {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px) brightness(50%);
+    z-index:-1;
+}
+
+
+/* Cast Section */
+.cast-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cast-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.actor {
+    background-color: var(--card-background);
+    width: 200px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.actor img {
+    width: 100%;
+    height: 200px; /* Adjusted for smaller actor images */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.actor h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+.actor p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+/* Similar Movies Section */
+.similar-movies-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.movie-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.movie {
+    background-color: var(--card-background);
+    width: 200px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.movie img {
+    width: 100%;
+    /* height: 200px; Adjusted for smaller movie images */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.movie h2 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+.movie p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+/* Production Logos */
+.production-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.production-logo {
+    max-height: 50px;
+    object-fit: contain;
+}
+
+/* signout */
+.signout-btn {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signout-btn:hover {
+    background-color: #ff79b0;
+}
+
+/* To adjust alignment of Sign Out button */
+#signout-btn-container {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+/* navbar */
+/* Modern Navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #ff4081;
+}
+
+.navbar-container h1 {
+    font-size: 2rem;
+    color: #ff4081;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    background-color: #ff4081;
+    border-radius: 5px;
+}
+
+/* Sign Out Button Style */
+.signout-btn {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signout-btn:hover {
+    background-color: #ff79b0;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 0.8rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    #signout-btn-container {
+        margin-top: 1rem;
+    }
+}
+
+
+/* search-bar */
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-bar {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.search-btn {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+    background-color: #ff79b0;
+}
+
+/* Responsive Search Bar */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+    }
+}
+
+
+

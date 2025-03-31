@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Database</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <h1>🎥 Movie Database</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="auth-link"><a href="login.html">Login/SignUp</a></li>
+                    <li id="signout-btn-container" style="display: none;">
+                        <button id="signout-btn" class="signout-btn">Sign Out</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <form id="search-form" action="search.html" method="GET">
+                    <input
+                        type="text"
+                        id="search-bar"
+                        name="query"
+                        class="search-bar"
+                        placeholder="Search movies..."
+                        required
+                    />
+                    <button type="submit" class="search-btn">🔍</button>
+                </form>
+                
+                
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <button class="btn" onclick="filterMovies('trending')">Trending</button>
+        <button class="btn" onclick="filterMovies('latest')">Latest Releases</button>
+        <button class="btn" onclick="filterMovies('top_rated')">Highly Rated</button>
+        <button class="btn" onclick="window.location.href='explore.html'">Explore Random Movie</button>
+        <br>
+    </section>
+
+    <!-- Movie Sections -->
+    <section class="movie-sections">
+        <div id="trending-movies" class="movie-list"></div>
+        <div id="latest-movies" class="movie-list"></div>
+        <div id="top_rated-movies" class="movie-list"></div>
+    </section>
+
+    <footer>
+        <p>© 2025 Vit Chennai. All rights reserved.</p> 
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

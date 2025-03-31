@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-poster" id="background-poster"></div>
+    <header>
+        <div class="navbar-container">
+            <h1>🎥 Movie Database</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="auth-link"><a href="login.html">Login/SignUp</a></li>
+                    <li id="signout-btn-container" style="display: none;">
+                        <button id="signout-btn" class="signout-btn">Sign Out</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Movie container -->
+    <section class="movie-container">
+        <div id="movie-details" class="movie-details">
+            <img src="placeholder.jpg" alt="Movie Poster">
+            <h2>Movie Title</h2>
+            <p>Movie description goes here. This is a placeholder for the movie details.</p>
+        </div>
+    </section>
+
+    <!-- Cast section -->
+    <section class="cast-section">
+        <h2>Cast</h2>
+        <div id="cast-list" class="cast-list">
+            <div class="actor">
+                <img src="actor-placeholder.jpg" alt="Actor">
+                <h3>Actor Name</h3>
+                <p>Role</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trailer section -->
+    <section class="trailer-section">
+        <h2>Watch Trailer</h2>
+        <div id="trailer-container" class="trailer-container">
+            <iframe src="https://www.youtube.com/embed/placeholder" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Similar Movies section -->
+    <section class="similar-movies-section">
+        <h2>Similar Movies</h2>
+        <div id="similar-movies" class="movie-list">
+            <div class="movie">
+                <img src="movie-placeholder.jpg" alt="Similar Movie">
+                <h2>Similar Movie Title</h2>
+                <p>Short description</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Movie Website. All rights reserved.</p>
+    </footer>
+
+    <script src="movies.js"></script>
+</body>
+</html>
